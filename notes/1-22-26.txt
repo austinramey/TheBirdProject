@@ -1,1 +1,9 @@
-- 
+- Range we are looking at:
+    - Nov - Nov
+    - 2000 - 2025
+- Tarrant code: US-TX-439
+
+ROUGH bounding box:
+Southwest: 32.822076, -97.506151
+
+Northeast: 32.870591, -97.439976
