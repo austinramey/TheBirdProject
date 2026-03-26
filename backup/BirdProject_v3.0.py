@@ -4,12 +4,9 @@ from datetime import datetime, timedelta
 
 # Indent: 0 
 def parse_weekly_argument(arg): 
-    # Indent: 1 
     """Parse the weekly mode argument from command line.""" 
     if arg is None: 
-        # Indent: 2 
         return False 
-    # Indent: 1 
     arg = str(arg).lower().strip() 
     return arg in ['true', '1', 'yes', 'y'] 
 
@@ -20,6 +17,7 @@ def get_iso_week_date_range(year, week):
     Calculate the start and end dates for an ISO week. 
     Returns (start_date, end_date) as datetime objects. 
     """ 
+    # Indent: 1 
     try: 
         # Indent: 2 
         jan_1 = datetime(year, 1, 1) 
@@ -90,6 +88,7 @@ def process_bird_observations(bird_name, useWeekly):
     min_year = 2025 
     max_year = 2000 
 
+    # Indent: 1 
     try: 
         # Indent: 2 
         with open(input_file, 'r') as f: 
@@ -123,7 +122,6 @@ def process_bird_observations(bird_name, useWeekly):
                     # Indent: 5 
                     print(f"Warning: Skipping invalid date format: {date_str}") 
                     continue 
-
                 # Indent: 4 
                 # Update year range tracking 
                 if year < min_year: 
@@ -143,7 +141,6 @@ def process_bird_observations(bird_name, useWeekly):
                 except ValueError: 
                     # Indent: 5 
                     observations = 0 
-
                 # Indent: 4 
                 if use_weekly: 
                     # Indent: 5 
@@ -223,37 +220,40 @@ def process_bird_observations(bird_name, useWeekly):
 
         if use_weekly: 
             # Indent: 3 
-            # Group by year first, then show all weeks for that year 
-            for year in range(max_year, min_year - 1, -1): 
+            # Calculate max weeks across all years 
+            max_weeks = max(get_weeks_in_year(year) for year in range(min_year, max_year + 1)) 
+
+            for week in range(1, max_weeks + 1): 
                 # Indent: 4 
-                # Year header 
-                results.append(f"{year} - {bird_name}:") 
+                # Get date range for the max year as reference 
+                start_date, end_date = get_iso_week_date_range(max_year, week) 
 
-                # Get number of weeks for this specific year 
-                weeks_in_year = get_weeks_in_year(year) 
-
-                # Show all weeks for this year 
-                for week in range(1, weeks_in_year + 1): 
+                if start_date and end_date: 
                     # Indent: 5 
-                    # Calculate date range for this week in this specific year 
-                    start_date, end_date = get_iso_week_date_range(year, week) 
+                    start_str = start_date.strftime("%m/%d/%Y") 
+                    end_str = end_date.strftime("%m/%d/%Y") 
+                    results.append(f"Week {week} - {start_str} -> {end_str} - {bird_name}:") 
+                # Indent: 4 
+                else: 
+                    # Indent: 5 
+                    results.append(f"Week {week} - {bird_name}:") 
 
-                    if start_date and end_date: 
+                # Indent: 4 
+                # Show data for each year (descending) 
+                for year in range(max_year, min_year - 1, -1): 
+                    # Indent: 5 
+                    weeks_in_year = get_weeks_in_year(year) 
+                    if week > weeks_in_year: 
                         # Indent: 6 
-                        start_str = start_date.strftime("%m/%d/%Y") 
-                        end_str = end_date.strftime("%m/%d/%Y") 
-                        # Get observation count for this year-week 
-                        obs = weekly_data.get(year, {}).get(week, 0) 
-                        results.append(f"Week {week} - {start_str} -> {end_str} - {obs}") 
+                        obs = 0 
                     # Indent: 5 
                     else: 
                         # Indent: 6 
-                        # Fallback if date calculation fails 
                         obs = weekly_data.get(year, {}).get(week, 0) 
-                        results.append(f"Week {week} - {obs}") 
+                    # Indent: 5 
+                    results.append(f"{year}-{obs}") 
 
                 # Indent: 4 
-                # Add separator between years 
                 results.append("") 
                 results.append("=" * 10) 
                 results.append("") 
@@ -320,4 +320,4 @@ if __name__ == "__main__":
     # Indent: 1 
     bird_name = sys.argv[1] 
     useWeekly = sys.argv[2] if len(sys.argv) > 2 else None 
-    process_bird_observations(bird_name, useWeekly)
+    process_bird_observations(bird_name, useWeekly) 
