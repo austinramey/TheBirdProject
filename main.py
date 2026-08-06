@@ -140,10 +140,11 @@ def process_bird_observations(bird_name, useWeekly):
                         continue
 
                     if year not in monthly_data[month]:
-                        monthly_data[month][year] = observations
+                        monthly_data[month][year] = [observations, date_str]
 
-                    elif observations > monthly_data[month][year]:
-                        monthly_data[month][year] = observations
+                    elif observations > monthly_data[month][year][0]:
+                        monthly_data[month][year] = [observations, date_str]
+                        # monthly_data[month][year] = [observations, ]
 
         # Ensure we at least have 2000-2025 range
         if min_year > 2000:
@@ -221,8 +222,8 @@ def process_bird_observations(bird_name, useWeekly):
 
                 for year in range(max_year, min_year - 1, -1):
                     obs = monthly_data[month].get(year, 0)
-                    if obs > 0: # Remove this to bring back empty years from each month format
-                        results.append(f"{year}-{obs}")
+                    if type(obs) is list and obs[0] > 0: # Remove this to bring back empty years from each month format
+                        results.append(f"{year}-{obs[0]} -- {obs[1]}")
 
                 results.append("")
                 results.append("=" * 10)
