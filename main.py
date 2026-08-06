@@ -46,10 +46,10 @@ def process_bird_observations(bird_name, useWeekly):
     # base_path = r"C:\Users\austin.ramey\Documents\Python\Personal Python\inputsAndOutputs"
     # input_file = os.path.join(base_path, f"{bird_name}Input.txt")
     # output_file = os.path.join(base_path, f"{bird_name}Output.txt")
-    base_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject"
-    input_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject/inputs"
+    base_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject"
+    input_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject\inputs"
     input_file = os.path.join(input_path, f"{bird_name}Input.txt")
-    output_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject/outputs"
+    output_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject\outputs"
     output_file = os.path.join(output_path, f"{bird_name}Output.txt")
 
     if not os.path.exists(input_file):

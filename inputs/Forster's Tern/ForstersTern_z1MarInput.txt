@@ -1,0 +1,18 @@
+2020-03-06	2	Fort Worth Zoo
+2024-03-16	5	Neita E.	
+2024-03-16	5	Paula Channell	
+2022-03-05	2	Thomas Creel	
+2021-03-08	5	Michael Perez	
+2018-03-05	14	Christian Fernandez	
+2018-03-04	3	Paula Channell	
+2018-03-03	3	William Edwards	
+2017-03-13	3	Jon Connor	
+2017-03-05	4	John Allendorf	
+2016-03-31	2	Mike Weber	
+2016-03-20	11	FWAS Big Year	
+2016-03-20	11	VandB Moore	
+2015-03-16	2	Charley Amos	
+2014-03-24	5	Cory Norris	
+2014-03-15	2	Thomas Haase	
+2013-03-07	X	Mary Lee	
+2010-03-22	3	Steve Glover

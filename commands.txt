@@ -1,0 +1,16 @@
+Main command: python main.py {bird name} [true]
+
+Steps for use:
+1. Press Ctrl+shift+` (this will open the terminal)
+2. Type the command into the terminal
+3. If an input file exists, it will read from that and output the result
+4. If an input does not exist, it will create one and you need to fill it with the data
+then run the program again.
+
+Input files are stored in the inputs folder
+
+Output files are stored in the outputs folder
+
+Exmple commands:
+- python3-64.exe main.py americanCoot
+- python3-64.exe main.py northernCardinal true
