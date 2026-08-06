@@ -2,11 +2,9 @@ import sys
 import os
 from datetime import datetime, timedelta
 
-
 def parse_weekly_argument(arg):
     """Parse the weekly mode argument from command line."""
     if arg is None:
-
         return False
 
     arg = str(arg).lower().strip()
@@ -19,11 +17,9 @@ def get_iso_week_date_range(year, week):
     Returns (start_date, end_date) as datetime objects.
     """
     try:
-
         jan_1 = datetime(year, 1, 1)
         days_to_monday = (7 - jan_1.weekday()) % 7
         if days_to_monday > 3:
-
             days_to_monday -= 7
 
         first_monday = jan_1 + timedelta(days=days_to_monday)
@@ -33,7 +29,6 @@ def get_iso_week_date_range(year, week):
         return start_date, end_date
 
     except:
-
         return None, None
 
 
@@ -58,9 +53,7 @@ def process_bird_observations(bird_name, useWeekly):
     output_file = os.path.join(output_path, f"{bird_name}Output.txt")
 
     if not os.path.exists(input_file):
-
         with open(input_file, "w") as f:
-
             pass
 
         print(f"Created {bird_name}Input.txt.")
@@ -74,30 +67,23 @@ def process_bird_observations(bird_name, useWeekly):
 
     # Initialize data structures
     if use_weekly:
-
         weekly_data = {}
 
     else:
-
         monthly_data = {month: {} for month in range(1, 13)}
 
     min_year = 2025
     max_year = 2000
 
     try:
-
         with open(input_file, "r") as f:
-
             for line in f:
-
                 line = line.strip()
                 if not line:
-
                     continue
 
                 parts = line.split("\t")
                 if len(parts) < 3:
-
                     continue
 
                 date_str = parts[0].strip()
@@ -105,83 +91,65 @@ def process_bird_observations(bird_name, useWeekly):
 
                 # Extract year, month, and day
                 try:
-
                     year_month_day = date_str.split("-")
                     year = int(year_month_day[0])
                     month = int(year_month_day[1])
                     day = int(year_month_day[2])
 
                 except (ValueError, IndexError):
-
                     print(f"Warning: Skipping invalid date format: {date_str}")
                     continue
 
                 # Update year range tracking
                 if year < min_year:
-
                     min_year = year
 
                 if year > max_year:
-
                     max_year = year
 
                 # Convert observations to int (X = 0)
                 try:
-
                     observations = int(obs_str)
 
                 except ValueError:
-
                     observations = 0
 
                 if use_weekly:
-
                     # Calculate ISO week number
                     try:
-
                         date_obj = datetime(year, month, day)
                         week_num = date_obj.isocalendar()[1]
 
                         if year not in weekly_data:
-
                             weekly_data[year] = {}
 
                         if week_num not in weekly_data[year]:
-
                             weekly_data[year][week_num] = observations
 
                         elif observations > weekly_data[year][week_num]:
-
                             weekly_data[year][week_num] = observations
 
                     except ValueError:
-
                         print(f"Warning: Skipping invalid date: {date_str}")
                         continue
 
                 else:
-
                     # Monthly mode
                     if month < 1 or month > 12:
-
                         print(f"Warning: Skipping invalid month in date: {date_str}")
                         continue
 
                     if year not in monthly_data[month]:
-
                         monthly_data[month][year] = observations
 
                     elif observations > monthly_data[month][year]:
-
                         monthly_data[month][year] = observations
 
         # Ensure we at least have 2000-2025 range
         if min_year > 2000:
-
             min_year = 2000
 
         if max_year < 2025:
-
             max_year = 2025
 
         # Month names mapping
@@ -212,7 +180,6 @@ def process_bird_observations(bird_name, useWeekly):
                 .lower()
             )
             if response not in ["y", "yes", ""]:
-
                 print("Skipping file write. Displaying results to console.")
                 write_to_file = False
 
@@ -232,12 +199,10 @@ def process_bird_observations(bird_name, useWeekly):
 
                 # Show all weeks for this year
                 for week in range(1, weeks_in_year + 1):
-
                     # Calculate date range for this week in this specific year
                     start_date, end_date = get_iso_week_date_range(year, week)
 
                     if start_date and end_date:
-
                         start_str = start_date.strftime("%m/%d/%Y")
                         end_str = end_date.strftime("%m/%d/%Y")
                         # Get observation count for this year-week
@@ -247,7 +212,6 @@ def process_bird_observations(bird_name, useWeekly):
                         )
 
                     else:
-
                         # Fallback if date calculation fails
                         obs = weekly_data.get(year, {}).get(week, 0)
                         results.append(f"Week {week} - {obs}")
@@ -258,14 +222,11 @@ def process_bird_observations(bird_name, useWeekly):
                 results.append("")
 
         else:
-
             # Monthly mode
             for month in range(1, 13):
-
                 results.append(f"{month_names[month]} - {bird_name}:")
 
                 for year in range(max_year, min_year - 1, -1):
-
                     obs = monthly_data[month].get(year, 0)
                     results.append(f"{year}-{obs}")
 
@@ -275,11 +236,8 @@ def process_bird_observations(bird_name, useWeekly):
 
         # Write to file if approved, always display to console
         if write_to_file:
-
             with open(output_file, "w") as f:
-
                 for result in results:
-
                     f.write(result + "\n")
 
             mode_str = "weekly" if use_weekly else "monthly"
@@ -290,22 +248,17 @@ def process_bird_observations(bird_name, useWeekly):
         # Always display results to console
         print("\nResults:")
         for result in results:
-
             print(result)
 
     except FileNotFoundError:
-
         print(f"Error: Could not find {input_file}")
 
     except Exception as e:
-
         print(f"Error processing file: {e}")
 
 
 if __name__ == "__main__":
-
     if len(sys.argv) < 2:
-
         print("Error: Please provide a bird name.")
         print("Usage: python BirdNumericSearch.py <birdName> [weekly]")
         print("Examples:")
