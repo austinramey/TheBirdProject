@@ -171,14 +171,7 @@ def process_bird_observations(bird_name, useWeekly):
         # Check if output file exists and prompt for overwrite
         write_to_file = True
         if os.path.exists(output_file):
-
-            response = (
-                input(
-                    f"Warning: {bird_name}Output.txt already exists. Overwrite? (y/N): "
-                )
-                .strip()
-                .lower()
-            )
+            response = (input(f"Warning: {bird_name}Output.txt already exists. Overwrite? (y/N): ").strip().lower())
             if response not in ["y", "yes", ""]:
                 print("Skipping file write. Displaying results to console.")
                 write_to_file = False
@@ -228,7 +221,8 @@ def process_bird_observations(bird_name, useWeekly):
 
                 for year in range(max_year, min_year - 1, -1):
                     obs = monthly_data[month].get(year, 0)
-                    results.append(f"{year}-{obs}")
+                    if obs > 0: # Remove this to bring back empty years from each month format
+                        results.append(f"{year}-{obs}")
 
                 results.append("")
                 results.append("=" * 10)
@@ -246,9 +240,9 @@ def process_bird_observations(bird_name, useWeekly):
             )
 
         # Always display results to console
-        print("\nResults:")
-        for result in results:
-            print(result)
+        # print("\nResults:")
+        # for result in results:
+        #     print(result)
 
     except FileNotFoundError:
         print(f"Error: Could not find {input_file}")
