@@ -142,7 +142,7 @@ def process_bird_observations(bird_name, useWeekly):
                     if year not in monthly_data[month]:
                         monthly_data[month][year] = [observations, date_str]
 
-                    elif observations > monthly_data[month][year][0]:
+                    elif observations >= monthly_data[month][year][0]:
                         monthly_data[month][year] = [observations, date_str]
                         # monthly_data[month][year] = [observations, ]
 
