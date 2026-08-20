@@ -45,7 +45,7 @@ November - Double-crestedCormorant_z10Dec:
 December - Double-crestedCormorant_z10Dec:
 2025-40 -- 2025-12-27
 2024-27 -- 2024-12-29
-2023-6 -- 2023-12-16
+2023-6 -- 2023-12-16- No count
 2022-10 -- 2022-12-15
 2021-10 -- 2021-12-01
 2020-1 -- 2020-12-04
