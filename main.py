@@ -38,6 +38,43 @@ def get_weeks_in_year(year):
     return dec_28.isocalendar()[1]
 
 
+def find_file_in_subdirectories(base_path, target_filename):
+    """
+    Search base_path and all of its subdirectories for target_filename.
+    Returns the full path to the file if found, otherwise None.
+
+    If more than one match is found (e.g. duplicate files in different
+    subfolders), the first one found is used and a warning is printed
+    so the user is aware duplicates exist.
+    """
+    matches = []
+
+    for root, dirs, files in os.walk(base_path):
+        if target_filename in files:
+            matches.append(os.path.join(root, target_filename))
+
+    if not matches:
+        return None
+
+    if len(matches) > 1:
+        print(f"Warning: Found multiple copies of {target_filename}:")
+        for match in matches:
+            print(f"  {match}")
+        print(f"Using: {matches[0]}")
+
+    return matches[0]
+
+
+def find_input_file(input_path, bird_name):
+    """Search input_path (and subfolders) for the bird's input file."""
+    return find_file_in_subdirectories(input_path, f"{bird_name}Input.txt")
+
+
+def find_output_file(output_path, bird_name):
+    """Search output_path (and subfolders) for the bird's existing output file."""
+    return find_file_in_subdirectories(output_path, f"{bird_name}Output.txt")
+
+
 def process_bird_observations(bird_name, useWeekly):
     """
     Reads bird observation data and finds maximum observations per year-month or year-week.
@@ -48,11 +85,23 @@ def process_bird_observations(bird_name, useWeekly):
     # output_file = os.path.join(base_path, f"{bird_name}Output.txt")
     base_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject"
     input_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject\inputs"
-    input_file = os.path.join(input_path, f"{bird_name}Input.txt")
     output_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject\outputs"
-    output_file = os.path.join(output_path, f"{bird_name}Output.txt")
 
-    if not os.path.exists(input_file):
+    # Search the output folder and all subfolders for an existing output file.
+    # If the user has one tucked away in a subfolder, we want to update that
+    # one in place rather than creating a duplicate in the base folder.
+    output_file = find_output_file(output_path, bird_name)
+    if output_file is None:
+        output_file = os.path.join(output_path, f"{bird_name}Output.txt")
+
+    # Search the input folder and all subfolders for the bird's input file
+    input_file = find_input_file(input_path, bird_name)
+
+    if input_file is None:
+        # Nothing found anywhere under input_path, so create a fresh one
+        # in the base input folder (same behavior as before).
+        input_file = os.path.join(input_path, f"{bird_name}Input.txt")
+
         with open(input_file, "w") as f:
             pass
 
