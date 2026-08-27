@@ -82,8 +82,8 @@ def process_bird_observations(bird_name, useWeekly, auto_overwrite=False, input_
 
     Returns a dict: {"status": "ok"|"empty"|"error", "message": "..."}
     """
-    # base_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject"
-    base_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject"
+    base_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject"
+    # base_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject"
     input_path = f"{base_path}/inputs"
     output_path = f"{base_path}/outputs"
 
@@ -176,10 +176,14 @@ def process_bird_observations(bird_name, useWeekly, auto_overwrite=False, input_
                             weekly_data[year] = {}
 
                         if week_num not in weekly_data[year]:
-                            weekly_data[year][week_num] = observations
+                            weekly_data[year][week_num] = [observations, date_str]
 
-                        elif observations > weekly_data[year][week_num]:
-                            weekly_data[year][week_num] = observations
+                        elif observations > weekly_data[year][week_num][0]:
+                            weekly_data[year][week_num] = [observations, date_str]
+
+                        elif observations == weekly_data[year][week_num][0]:
+                            if date_str > weekly_data[year][week_num][1]:
+                                weekly_data[year][week_num] = [observations, date_str]
 
                     except ValueError:
                         warnings.append(f"Invalid date: {date_str}")
@@ -194,9 +198,12 @@ def process_bird_observations(bird_name, useWeekly, auto_overwrite=False, input_
                     if year not in monthly_data[month]:
                         monthly_data[month][year] = [observations, date_str]
 
-                    elif observations >= monthly_data[month][year][0]:
+                    elif observations > monthly_data[month][year][0]:
                         monthly_data[month][year] = [observations, date_str]
-                        # monthly_data[month][year] = [observations, ]
+
+                    elif observations == monthly_data[month][year][0]:
+                        if date_str > monthly_data[month][year][1]:
+                            monthly_data[month][year] = [observations, date_str]
 
         if not has_data:
             msg = "No valid observation data found"
@@ -258,14 +265,16 @@ def process_bird_observations(bird_name, useWeekly, auto_overwrite=False, input_
                         start_str = start_date.strftime("%m/%d/%Y")
                         end_str = end_date.strftime("%m/%d/%Y")
                         # Get observation count for this year-week
-                        obs = weekly_data.get(year, {}).get(week, 0)
+                        entry = weekly_data.get(year, {}).get(week, None)
+                        obs = entry[0] if entry else 0
                         results.append(
                             f"Week {week} - {start_str} -> {end_str} - {obs}"
                         )
 
                     else:
                         # Fallback if date calculation fails
-                        obs = weekly_data.get(year, {}).get(week, 0)
+                        entry = weekly_data.get(year, {}).get(week, None)
+                        obs = entry[0] if entry else 0
                         results.append(f"Week {week} - {obs}")
 
                 # Add separator between years
