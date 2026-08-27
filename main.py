@@ -75,41 +75,40 @@ def find_output_file(output_path, bird_name):
     return find_file_in_subdirectories(output_path, f"{bird_name}Output.txt")
 
 
-def process_bird_observations(bird_name, useWeekly):
+def process_bird_observations(bird_name, useWeekly, auto_overwrite=False, input_file_override=None, output_dir_override=None):
     """
     Reads bird observation data and finds maximum observations per year-month or year-week.
     Outputs results grouped by month or week, sorted by year descending.
+
+    Returns a dict: {"status": "ok"|"empty"|"error", "message": "..."}
     """
-    # base_path = r"C:\Users\austin.ramey\Documents\Python\Personal Python\inputsAndOutputs"
-    # input_file = os.path.join(base_path, f"{bird_name}Input.txt")
-    # output_file = os.path.join(base_path, f"{bird_name}Output.txt")
-    base_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject"
-    input_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject\inputs"
-    output_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject\outputs"
+    # base_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject"
+    base_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject"
+    input_path = f"{base_path}/inputs"
+    output_path = f"{base_path}/outputs"
 
-    # Search the output folder and all subfolders for an existing output file.
-    # If the user has one tucked away in a subfolder, we want to update that
-    # one in place rather than creating a duplicate in the base folder.
-    output_file = find_output_file(output_path, bird_name)
-    if output_file is None:
-        output_file = os.path.join(output_path, f"{bird_name}Output.txt")
+    if input_file_override:
+        input_file = input_file_override
+    else:
+        input_file = find_input_file(input_path, bird_name)
+        if input_file is None:
+            input_file = os.path.join(input_path, f"{bird_name}Input.txt")
 
-    # Search the input folder and all subfolders for the bird's input file
-    input_file = find_input_file(input_path, bird_name)
+            with open(input_file, "w") as f:
+                pass
 
-    if input_file is None:
-        # Nothing found anywhere under input_path, so create a fresh one
-        # in the base input folder (same behavior as before).
-        input_file = os.path.join(input_path, f"{bird_name}Input.txt")
+            print(f"Created {bird_name}Input.txt.")
+            print("Format: YYYY-MM-DD [tab] observations [tab] observer_name")
+            print("Use camelCase naming with no spaces or punctuation.")
+            print("Run program again when data is added.")
+            return {"status": "empty", "message": "Created new empty input file"}
 
-        with open(input_file, "w") as f:
-            pass
-
-        print(f"Created {bird_name}Input.txt.")
-        print("Format: YYYY-MM-DD [tab] observations [tab] observer_name")
-        print("Use camelCase naming with no spaces or punctuation.")
-        print("Run program again when data is added.")
-        return
+    if output_dir_override:
+        output_file = os.path.join(output_dir_override, f"{bird_name}Output.txt")
+    else:
+        output_file = find_output_file(output_path, bird_name)
+        if output_file is None:
+            output_file = os.path.join(output_path, f"{bird_name}Output.txt")
 
     # Determine mode
     use_weekly = parse_weekly_argument(useWeekly)
@@ -125,6 +124,8 @@ def process_bird_observations(bird_name, useWeekly):
     max_year = 2000
 
     try:
+        has_data = False
+        warnings = []
         with open(input_file, "r") as f:
             for line in f:
                 line = line.strip()
@@ -146,7 +147,7 @@ def process_bird_observations(bird_name, useWeekly):
                     day = int(year_month_day[2])
 
                 except (ValueError, IndexError):
-                    print(f"Warning: Skipping invalid date format: {date_str}")
+                    warnings.append(f"Invalid date format: {date_str}")
                     continue
 
                 # Update year range tracking
@@ -155,6 +156,8 @@ def process_bird_observations(bird_name, useWeekly):
 
                 if year > max_year:
                     max_year = year
+
+                has_data = True
 
                 # Convert observations to int (X = 0)
                 try:
@@ -179,13 +182,13 @@ def process_bird_observations(bird_name, useWeekly):
                             weekly_data[year][week_num] = observations
 
                     except ValueError:
-                        print(f"Warning: Skipping invalid date: {date_str}")
+                        warnings.append(f"Invalid date: {date_str}")
                         continue
 
                 else:
                     # Monthly mode
                     if month < 1 or month > 12:
-                        print(f"Warning: Skipping invalid month in date: {date_str}")
+                        warnings.append(f"Invalid month in date: {date_str}")
                         continue
 
                     if year not in monthly_data[month]:
@@ -194,6 +197,12 @@ def process_bird_observations(bird_name, useWeekly):
                     elif observations >= monthly_data[month][year][0]:
                         monthly_data[month][year] = [observations, date_str]
                         # monthly_data[month][year] = [observations, ]
+
+        if not has_data:
+            msg = "No valid observation data found"
+            if warnings:
+                msg += " (" + "; ".join(warnings) + ")"
+            return {"status": "empty", "message": msg}
 
         # Ensure we at least have 2000-2025 range
         if min_year > 2000:
@@ -220,7 +229,7 @@ def process_bird_observations(bird_name, useWeekly):
 
         # Check if output file exists and prompt for overwrite
         write_to_file = True
-        if os.path.exists(output_file):
+        if os.path.exists(output_file) and not auto_overwrite:
             response = (input(f"Warning: {bird_name}Output.txt already exists. Overwrite? (y/N): ").strip().lower())
             if response not in ["y", "yes", ""]:
                 print("Skipping file write. Displaying results to console.")
@@ -280,6 +289,7 @@ def process_bird_observations(bird_name, useWeekly):
 
         # Write to file if approved, always display to console
         if write_to_file:
+            os.makedirs(os.path.dirname(output_file), exist_ok=True)
             with open(output_file, "w") as f:
                 for result in results:
                     f.write(result + "\n")
@@ -289,28 +299,111 @@ def process_bird_observations(bird_name, useWeekly):
                 f"Successfully processed data and wrote results to {bird_name}Output.txt ({mode_str} mode)"
             )
 
-        # Always display results to console
-        # print("\nResults:")
-        # for result in results:
-        #     print(result)
+        return {"status": "ok", "message": "; ".join(warnings) if warnings else ""}
 
     except FileNotFoundError:
         print(f"Error: Could not find {input_file}")
+        return {"status": "error", "message": f"File not found: {input_file}"}
 
     except Exception as e:
         print(f"Error processing file: {e}")
+        return {"status": "error", "message": str(e)}
+
+
+def reprocess_all(useWeekly):
+    """
+    Walks all *Input.txt files under inputs/, processes each one,
+    writes output to the matching outputs/ subfolder, and logs any problems.
+    """
+    base_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject"
+    input_path = os.path.join(base_path, "inputs")
+    output_path = os.path.join(base_path, "outputs")
+    log_path = os.path.join(base_path, "reprocess_log.txt")
+
+    use_weekly = parse_weekly_argument(useWeekly)
+
+    ok_count = 0
+    empty_count = 0
+    error_count = 0
+    problems = []
+
+    input_files = []
+    for root, dirs, files in os.walk(input_path):
+        for fname in files:
+            if fname.endswith("Input.txt"):
+                input_files.append(os.path.join(root, fname))
+
+    total = len(input_files)
+    print(f"Found {total} input files. Processing...")
+
+    for input_file in sorted(input_files):
+        # Derive bird name: strip the Input.txt suffix
+        bird_name = os.path.basename(input_file).replace("Input.txt", "")
+
+        # Compute matching output subfolder
+        rel_dir = os.path.relpath(os.path.dirname(input_file), input_path)
+        if rel_dir == ".":
+            out_dir = output_path
+        else:
+            out_dir = os.path.join(output_path, rel_dir)
+
+        os.makedirs(out_dir, exist_ok=True)
+
+        result = process_bird_observations(
+            bird_name,
+            useWeekly,
+            auto_overwrite=True,
+            input_file_override=input_file,
+            output_dir_override=out_dir,
+        )
+
+        if result["status"] == "ok":
+            ok_count += 1
+            if result["message"]:
+                problems.append((input_file, f"Warnings: {result['message']}"))
+        elif result["status"] == "empty":
+            empty_count += 1
+            problems.append((input_file, f"Empty: {result['message']}"))
+        else:
+            error_count += 1
+            problems.append((input_file, f"Error: {result['message']}"))
+
+    # Write log file
+    with open(log_path, "w") as f:
+        f.write(f"Reprocess Log - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write("=" * 40 + "\n\n")
+        if problems:
+            for filepath, issue in problems:
+                f.write(f"{filepath}\n")
+                f.write(f"  {issue}\n\n")
+        else:
+            f.write("No problems found.\n")
+
+    # Print summary
+    print("\n" + "=" * 40)
+    print(f"Reprocess complete: {total} files")
+    print(f"  OK:    {ok_count}")
+    print(f"  Empty: {empty_count}")
+    print(f"  Error: {error_count}")
+    print(f"Log written to {log_path}")
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Error: Please provide a bird name.")
-        print("Usage: python BirdNumericSearch.py <birdName> [weekly]")
+        print("Error: Please provide a bird name or command.")
+        print("Usage: python main.py <birdName> [weekly]")
+        print("       python main.py reprocess [weekly]")
         print("Examples:")
-        print(" python BirdNumericSearch.py americanCoot")
-        print(" python BirdNumericSearch.py americanCoot true")
-        print(" python BirdNumericSearch.py americanCoot false")
+        print(" python main.py americanCoot")
+        print(" python main.py americanCoot true")
+        print(" python main.py reprocess")
+        print(" python main.py reprocess true")
         sys.exit(1)
 
-    bird_name = sys.argv[1]
+    command = sys.argv[1]
     useWeekly = sys.argv[2] if len(sys.argv) > 2 else None
-    process_bird_observations(bird_name, useWeekly)
+
+    if command.lower() == "reprocess":
+        reprocess_all(useWeekly)
+    else:
+        process_bird_observations(command, useWeekly)
