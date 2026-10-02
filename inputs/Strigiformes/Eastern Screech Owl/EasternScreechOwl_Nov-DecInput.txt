@@ -1,0 +1,27 @@
+2017-12-16	3	Paula Channell
+2008-12-20	X	D.D. Currie cc	
+2008-12-20	X	Dell Little	
+2005-12-17	2	D.D. Currie cc	
+2005-12-17	2	D.D. Currie cc	
+2005-12-17	2	Dell Little	
+2004-12-18	2	D.D. Currie cc	
+2004-12-18	2	Dell Little
+2009-12-19	2	Ken Beazley
+2011-12-17	2	Mike Wease
+2013-12-14	2	Mike Wease	
+2013-12-14	2	Greg Cook	
+2013-12-14	2	Tyler Smith	
+2013-12-14	2	Ted Drozdowski	
+2009-12-19	1	Ted Drozdowski	
+2007-12-15	1	Ted Drozdowski
+2025-11-01	1	Valentin Garcia
+2022-12-17	1	Brian Driscoll	
+2018-12-15	2	James Sipiora	
+2018-12-15	2	Jay Rotter	
+2017-12-16	1	Scotty Lofland	
+2014-12-20	2	James Sipiora	
+2009-12-19	X	Gail Morris
+2020-12-19	3	Brent Franklin	
+2020-12-19	3	Ted Drozdowski	
+2020-12-19	3	Paula Channell	
+2019-12-14	1	Paula Channell

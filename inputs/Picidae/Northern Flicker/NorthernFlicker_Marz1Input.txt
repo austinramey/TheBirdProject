@@ -1,0 +1,65 @@
+2022-03-13	1	Shiela Shallcross
+2014-03-01	2	Kimberly Adams
+2017-03-02	1	Dena Tollefson	
+2017-03-02	1	Bill Tollefson
+2017-03-19	3	Shawn Hayes PhD	
+2017-03-19	1	Shawn Hayes PhD
+2025-03-10	2	Charley Amos	
+2024-03-29	1	Stan VanSandt	
+2024-03-16	2	Thomas Creel	
+2024-03-15	1	Michael Perez	
+2024-03-15	2	Michael Perez	
+2024-03-11	5	Michael Perez	
+2024-03-09	1	Gaston del Pino	
+2024-03-08	1	Michael Perez	
+2024-03-03	1	Charley Amos	
+2024-03-03	3	Thomas Creel	
+2024-03-01	2	Michael Hedges	
+2024-03-01	1	Anonymous eBirder	
+2024-03-01	1	G Havner	
+2023-03-26	2	Thomas Creel	
+2023-03-03	1	Gustavo Ustariz	
+2022-03-27	2	Todd Fitzgerald	
+2022-03-26	1	Thomas Creel	
+2022-03-20	2	Todd Fitzgerald	
+2022-03-20	1	Todd Fitzgerald	
+2022-03-12	1	Sarah Swallow	
+2022-03-05	1	Thomas Creel	
+2022-03-03	5	Todd Fitzgerald	
+2021-03-08	2	Cory Norris	
+2021-03-03	2	Todd Fitzgerald	
+2020-03-18	1	Charley Amos	
+2020-03-02	1	Michael Perez	
+2020-03-01	1	Kristopher (Kit) Dapprich	
+2020-03-01	6	Kristopher (Kit) Dapprich	
+2020-03-01	6	Christian Walker	
+2020-03-01	1	Christian Walker	
+2019-03-28	1	Paula Channell	
+2019-03-10	3	Paula Channell	
+2019-03-08	1	Margaret Fontaine	
+2018-03-22	2	William Edwards	
+2018-03-14	1	William Edwards	
+2018-03-07	1	William Edwards	
+2018-03-04	2	Paula Channell	
+2018-03-01	1	William Edwards	
+2017-03-13	1	Jon Connor	
+2017-03-05	2	John Allendorf	
+2017-03-04	1	Missy McAllister Kerr	
+2017-03-04	2	Paula Channell	
+2016-03-13	1	Walt Wagner-Hecht	
+2016-03-13	2	FWAS Big Year	
+2016-03-13	2	VandB Moore	
+2015-03-20	2	Mike Hillman	
+2015-03-20	2	Holly Owen	
+2015-03-16	2	Charley Amos	
+2015-03-01	3	Kyle Hawley	
+2014-03-15	1	Thomas Haase	
+2013-03-07	X	Mary Lee	
+2012-03-24	X	John Houle	
+2012-03-04	3	Jim Jones	
+2011-03-08	5	Michelle Villafranca	
+2010-03-22	1	Steve Glover	
+2007-03-17	5	D.D. Currie cc	
+2007-03-17	5	Dell Little	
+2005-03-11	X	D.D. Currie cc	
+2005-03-11	X	Dell Little

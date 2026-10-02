@@ -1,0 +1,20 @@
+2021-10-02	1	Thomas Creel
+2018-10-04	1	Carol Eldridge
+2025-10-11	1	Amanda Zimmermann	
+2025-10-05	3	Thomas Creel	
+2025-10-04	1	Tyler Cutshaw	
+2024-10-06	1	Thomas Creel	
+2023-10-04	X	Ido Ben-Itzhak	
+2019-10-08	1	Cory Norris	
+2019-10-05	4	Scott Tracy	
+2017-10-04	2	Cory Norris	
+2016-10-05	1	Cory Norris	
+2014-10-06	4	Cory Norris
+2021-12-18	1	James Sipiora	
+2021-12-18	1	Brian Driscoll	
+2017-12-05	1	John Cannizzo	
+2016-11-29	1	Cory Norris	
+2016-11-21	1	Ben West	
+2015-11-22	1	Brooke Smith	
+2011-11-08	1	Lisa Ann Fanning
+2017-12-11	1	Joyce Marie Stewart

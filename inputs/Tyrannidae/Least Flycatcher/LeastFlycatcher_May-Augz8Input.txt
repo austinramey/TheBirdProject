@@ -1,0 +1,13 @@
+2006-05-06	7	D.D. Currie cc	
+2006-05-06	7	Dell Little	
+2005-05-07	3	D.D. Currie cc	
+2005-05-07	3	Dell Little
+2014-05-03	1	Mike Wease
+2025-05-04	2	Ted Drozdowski	
+2019-05-04	2	Brent Franklin	
+2019-05-04	2	Mike Wease	
+2019-05-04	2	Ted Drozdowski	
+2015-05-02	2	Mike Wease	
+2010-05-01	1	Ted Drozdowski	
+2008-05-03	2	Ted Drozdowski
+2015-05-02	1	Mike Hillman

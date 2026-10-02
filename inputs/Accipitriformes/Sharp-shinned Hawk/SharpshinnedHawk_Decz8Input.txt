@@ -1,0 +1,34 @@
+2017-12-16	1	Paula Channell
+2018-12-15	2	Paula Channell
+2008-12-20	X	D.D. Currie cc	
+2008-12-20	X	Dell Little	
+2005-12-17	1	D.D. Currie cc	
+2005-12-17	1	D.D. Currie cc	
+2005-12-17	1	Dell Little	
+2004-12-18	1	D.D. Currie cc	
+2004-12-18	1	Dell Little
+2017-12-16	1	Paula Channell
+2019-12-14	1	Paula Channell
+2011-12-17	2	Mike Wease
+2025-12-20	1	Michael Perez	
+2025-12-20	1	Shaylin Daji	
+2025-12-20	1	Brent Franklin	
+2025-12-20	1	Ted Drozdowski	
+2025-12-20	1	Wes Hanson	
+2025-12-20	1	Paula Channell	
+2025-12-20	1	Lucienne Nicole-Fylling	
+2019-12-14	1	Brent Franklin	
+2019-12-14	1	Ted Drozdowski	
+2018-12-15	2	Brent Franklin	
+2018-12-15	2	Mike Wease	
+2018-12-15	2	Ted Drozdowski	
+2017-12-16	2	Mike Wease	
+2017-12-16	2	Brent Franklin	
+2017-12-16	2	Ted Drozdowski	
+2016-12-17	1	Mike Wease	
+2016-12-17	1	Brent Franklin	
+2016-12-17	1	Ted Drozdowski	
+2013-12-14	1	Mike Wease	
+2013-12-14	1	Greg Cook	
+2013-12-14	1	Tyler Smith	
+2013-12-14	1	Ted Drozdowski

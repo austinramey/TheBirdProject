@@ -324,7 +324,9 @@ def reprocess_all(useWeekly):
     Walks all *Input.txt files under inputs/, processes each one,
     writes output to the matching outputs/ subfolder, and logs any problems.
     """
-    base_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject"
+    # base_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject"
+    base_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject"
+
     input_path = os.path.join(base_path, "inputs")
     output_path = os.path.join(base_path, "outputs")
     log_path = os.path.join(base_path, "reprocess_log.txt")

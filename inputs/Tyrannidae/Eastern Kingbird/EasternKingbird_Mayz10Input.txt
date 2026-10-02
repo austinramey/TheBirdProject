@@ -1,0 +1,16 @@
+2006-05-06	13	D.D. Currie cc	
+2006-05-06	13	Dell Little	
+2005-05-07	4	D.D. Currie cc	
+2005-05-07	4	Dell Little
+2021-05-01	5	Paula Channell
+2014-05-03	2	Mike Wease	
+2011-05-07	3	Mike Wease
+2021-05-01	5	Ted Drozdowski	
+2019-05-04	1	Brent Franklin	
+2019-05-04	1	Mike Wease	
+2019-05-04	1	Ted Drozdowski	
+2010-05-01	9	Ted Drozdowski	
+2009-05-02	7	Ted Drozdowski
+2025-05-05	20	Tom Thalhuber
+2025-05-11	3	VandB Moore	
+2024-05-13	15	Philip Hardwick

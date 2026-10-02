@@ -1,0 +1,6 @@
+Reprocess Log - 2026-08-26 21:16:41
+========================================
+
+C:\Users\16822\Desktop\TheBirdProject\TheBirdProject\inputs\Gulls (& others like it)\Ring-Billed Gull\RingBilledGull_z2JInput.txt
+  Warnings: Invalid date format: Date
+

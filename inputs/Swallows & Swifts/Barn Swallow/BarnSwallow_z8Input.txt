@@ -1,0 +1,22 @@
+2024-05-09	2	Tom Thalhuber
+2016-04-30	4	FWAS Big Year	
+2016-04-30	4	Chuck Baskin
+2016-07-02	24	Janice Ciszewski
+2006-05-06	27	D.D. Currie cc	
+2006-05-06	27	Dell Little	
+2005-05-07	21	D.D. Currie cc	
+2005-05-07	21	Dell Little
+2023-04-29	5	Paula Channell
+2021-05-01	13	Paula Channell
+2014-05-03	2	Mike Wease	
+2011-05-07	2	Mike Wease
+2023-04-29	5	Ted Drozdowski	
+2021-05-01	13	Ted Drozdowski	
+2019-05-04	5	Brent Franklin	
+2019-05-04	5	Mike Wease	
+2019-05-04	5	Ted Drozdowski	
+2015-05-02	3	Mike Wease	
+2011-05-07	X	Ted Drozdowski	
+2010-05-01	5	Ted Drozdowski	
+2009-05-02	18	Ted Drozdowski	
+2008-05-03	7	Ted Drozdowski

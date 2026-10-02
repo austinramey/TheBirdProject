@@ -1,0 +1,30 @@
+2017-12-16	2	Paula Channell
+2008-12-20	X	D.D. Currie cc	
+2008-12-20	X	Dell Little	
+2006-12-16	1	D.D. Currie cc	
+2006-12-16	1	Dell Little	
+2005-12-17	1	D.D. Currie cc	
+2005-12-17	1	D.D. Currie cc	
+2005-12-17	1	Dell Little	
+2004-12-18	2	D.D. Currie cc	
+2004-12-18	2	Dell Little
+2018-12-15	2	Paula Channell
+2019-12-14	1	Paula Channell
+2011-12-17	1	Mike Wease	
+2010-12-18	1	Mike Wease
+2020-12-19	1	Brent Franklin	
+2020-12-19	1	Ted Drozdowski	
+2020-12-19	1	Paula Channell	
+2019-12-14	1	Brent Franklin	
+2019-12-14	1	Ted Drozdowski	
+2018-12-15	2	Brent Franklin	
+2018-12-15	2	Mike Wease	
+2018-12-15	2	Ted Drozdowski	
+2017-12-16	2	Mike Wease	
+2017-12-16	2	Brent Franklin	
+2017-12-16	2	Ted Drozdowski	
+2016-12-17	2	Mike Wease	
+2016-12-17	2	Brent Franklin	
+2016-12-17	2	Ted Drozdowski	
+2010-12-18	1	Ted Drozdowski
+2022-12-17	1	Brynne Bryan

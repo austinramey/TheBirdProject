@@ -1,0 +1,47 @@
+2018-05-07	6	Mike Jones
+2025-05-05	1	Doug Howard
+2025-05-29	1	Paula Channell	
+2025-05-27	1	Stephen Sears	
+2025-05-17	1	Lindsay Ellmore	
+2025-05-11	2	Micah Hale	
+2025-05-11	1	Great Texas Birding Classic	
+2025-05-11	1	Diana Brodeur	
+2025-05-10	1	Amanda Zimmermann	
+2025-05-10	1	Amanda Zimmermann	
+2025-05-10	1	Go Birding Team	
+2025-05-10	1	Amy Summerfelt	
+2025-05-10	3	Amanda Zimmermann	
+2025-05-10	4	Jess des Bordes	
+2025-05-10	2	Calvin Garvin	
+2025-05-07	4	Bill Scott	
+2025-05-03	3	Sheri Anderson	
+2025-05-03	3	Anthony Hewetson	
+2025-05-03	3	James Sipiora	
+2025-05-03	3	Richard May	
+2025-05-03	3	Marsyas MA	
+2025-05-02	1	Skyler Johnson	
+2024-05-26	2	Neita E.	
+2024-05-25	2	Neita E.	
+2019-05-19	1	Jonathan Patton	
+2019-05-13	1	Cory Norris	
+2019-05-13	1	Margaret Fontaine	
+2018-05-06	1	Lisa Coleman	
+2017-05-24	2	Mitchell Youngman	
+2017-05-20	5	Mike Weber	
+2017-05-16	1	Cory Norris	
+2017-05-02	2	Cory Norris	
+2016-05-13	4	FWAS Big Year	
+2016-05-13	4	Charley Amos	
+2016-05-07	1	Michael Perez	
+2016-05-01	1	Damon Williford	
+2015-05-27	1	Cory Norris	
+2015-05-05	4	Cory Norris	
+2014-05-18	1	Mike Wease	
+2014-05-11	2	Michelle Summers	
+2014-05-01	1	Knut Arne og Wenche Helene Nygård	
+2013-05-06	1	Collette Lauzau	
+2013-05-06	1	Holly Owen	
+2010-05-05	2	Steve Glover	
+2009-05-02	2	Michelle Villafranca	
+2008-05-28	2	Michelle Villafranca	
+2001-05-23	X	James Sipiora

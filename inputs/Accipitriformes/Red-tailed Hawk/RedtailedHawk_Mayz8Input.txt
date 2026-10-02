@@ -1,0 +1,13 @@
+2006-05-06	6	D.D. Currie cc	
+2006-05-06	6	Dell Little	
+2005-05-07	5	D.D. Currie cc	
+2005-05-07	5	Dell Little
+2014-05-03	2	Mike Wease	
+2011-05-07	2	Mike Wease
+2017-05-06	X	Jo Fulkerson
+2015-05-02	2	Mike Wease	
+2011-05-07	3	Ted Drozdowski	
+2010-05-01	3	Ted Drozdowski	
+2009-05-02	3	Ted Drozdowski	
+2008-05-03	4	Ted Drozdowski
+2015-05-02	3	Mike Hillman

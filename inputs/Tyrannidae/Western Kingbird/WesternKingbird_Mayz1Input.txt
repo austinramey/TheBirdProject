@@ -1,0 +1,29 @@
+2018-05-07	1	Mike Jones
+2025-05-29	2	Paula Channell	
+2025-05-13	2	Cory Norris	
+2025-05-10	1	Amanda Zimmermann	
+2025-05-10	3	Go Birding Team	
+2025-05-10	3	Amy Summerfelt	
+2025-05-10	1	Amanda Zimmermann	
+2025-05-03	1	James Sipiora	
+2025-05-03	1	Richard May	
+2025-05-03	1	Marsyas MA	
+2024-05-26	1	Neita E.	
+2024-05-25	2	Neita E.	
+2024-05-06	2	Anonymous eBirder	
+2024-05-06	2	Michael Perez	
+2023-05-20	2	Thomas Creel	
+2023-05-02	1	Jimmy Bryan	
+2018-05-21	2	Cascades2k17 Big Year 2018	
+2018-05-21	2	Millennial Falcons	
+2018-05-21	2	Andrew Marden	
+2017-05-20	4	Mike Weber	
+2016-05-13	1	FWAS Big Year	
+2016-05-13	1	Charley Amos	
+2016-05-07	1	Michael Perez	
+2016-05-06	1	Jeff Scott	
+2015-05-27	3	Cory Norris	
+2014-05-28	1	Gary Dorman	
+2013-05-06	1	Collette Lauzau	
+2013-05-06	1	Holly Owen	
+2008-05-04	3	Frank Edgar
