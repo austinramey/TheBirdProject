@@ -1,0 +1,31 @@
+2025-05-10	2	Jess des Bordes	
+2025-05-03	2	James Sipiora	
+2025-05-03	2	Richard May	
+2025-05-03	2	Marsyas MA	
+2022-04-30	1	Brian Driscoll	
+2022-04-30	3	Brian Driscoll	
+2022-04-30	5	Richard May	
+2022-04-30	5	James Sipiora	
+2022-04-14	1	Paula Channell	
+2022-04-14	2	Cory Norris	
+2021-05-01	1	James Sipiora	
+2021-04-25	1	Tom Thalhuber	
+2019-10-19	1	Kim Score	
+2019-10-08	1	William Edwards	
+2019-10-08	1	Cory Norris	
+2017-10-10	1	Cory Norris	
+2014-11-25	1	Jon Connor	
+2014-11-25	1	Holly Owen	
+2014-05-03	2	Trinity Bird Count	
+2014-05-03	2	James Sipiora	
+2014-04-29	3	Cory Norris	
+2014-04-22	3	Cory Norris	
+2014-04-05	1	Tamara Srader	
+2013-04-27	1	Trinity Bird Count	
+2013-04-27	1	James Sipiora	
+2012-04-28	1	James Sipiora	
+2010-05-05	1	Steve Glover	
+2009-10-31	1	Marissa Buschow	
+2001-12-02	X	Wendy Ealding	
+2000-10-09	X	Charles Crawford
+2000-10-21	1	Peggy Persson

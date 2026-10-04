@@ -82,8 +82,8 @@ def process_bird_observations(bird_name, useWeekly, auto_overwrite=False, input_
 
     Returns a dict: {"status": "ok"|"empty"|"error", "message": "..."}
     """
-    base_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject"
-    # base_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject"
+    # base_path = r"C:\Users\16822\Desktop\TheBirdProject\TheBirdProject"
+    base_path = r"/home/austin/devroot/PersonalProjects/TheBirdProject"
     input_path = f"{base_path}/inputs"
     output_path = f"{base_path}/outputs"
 

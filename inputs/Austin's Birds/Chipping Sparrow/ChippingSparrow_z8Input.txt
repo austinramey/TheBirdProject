@@ -1,0 +1,29 @@
+2017-04-29	11	Mike Wease	
+2016-12-17	6	Mike Wease	
+2016-12-17	6	Brent Franklin	
+2016-12-17	6	Ted Drozdowski	
+2013-12-14	41	Mike Wease	
+2013-12-14	41	Greg Cook	
+2013-12-14	41	Tyler Smith	
+2013-12-14	41	Ted Drozdowski	
+2012-04-28	29	Mike Wease	
+2012-04-28	29	Ted Drozdowski	
+2011-05-07	12	Ted Drozdowski	
+2010-05-01	8	Ted Drozdowski	
+2009-12-16	2	Ted Drozdowski	
+2009-05-02	1	Ted Drozdowski	
+2008-05-03	3	Ted Drozdowski	
+2008-05-02	X	Ted Drozdowski
+2018-04-28	10	Mike Wease	
+2014-05-03	25	Mike Wease	
+2012-04-28	18	Mike Wease	
+2011-05-07	3	Mike Wease
+2009-12-19	1	Ken Beazley
+2018-04-28	1	Paula Channell
+2008-12-20	X	D.D. Currie cc	
+2008-12-20	X	Dell Little	
+2006-12-16	1	D.D. Currie cc	
+2006-12-16	1	Dell Little	
+2006-05-06	10	D.D. Currie cc	
+2006-05-06	10	Dell Little
+2017-04-29	11	Paula Channell
