@@ -1,0 +1,16 @@
+2020-03-06	4	Fort Worth Zoo
+2017-01-17	20	Lee Renshaw
+2015-04-04	5	Mike Hillman
+2016-02-27	7	FWAS Big Year	
+2016-02-27	7	VandB Moore
+2021-03-28	8	VandB Moore	
+2021-01-23	20	VandB Moore
+2021-01-30	86	VandB Moore
+2015-04-04	12	Mike Hillman
+2025-05-03	10	Richard May	
+2025-02-09	7	Kay Hawklee	
+2024-03-13	14	Madeline Harris	
+2023-01-05	2	Stan VanSandt	
+2021-01-30	100	Kay Hawklee	
+2021-01-22	50	Jennifer Bristol	
+2017-01-26	8	Richard Lamb
